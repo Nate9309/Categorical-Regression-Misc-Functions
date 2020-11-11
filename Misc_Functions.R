@@ -4,7 +4,7 @@
 
 ## Lecture 3 (Ordinal Logit Models)
 
-polrLogitStdCoef <- function(mod, help = FALSE, digits = 4){
+polrLogitStdCoef = function(mod, help = FALSE, digits = 4){
   # Like Stata's listcoef for ordinal logit in R
   # mod is a polr object
   # Replicates all beta's in listcoef except bStdY, and bStdXY
@@ -47,7 +47,7 @@ polrLogitStdCoef <- function(mod, help = FALSE, digits = 4){
 
 ## Lecture 4 (Multinomial Models)
 
-mlogTestR <- function(unrestrictedModel, reflevel, type = "wald", digits = 4){
+mlogTestR = function(unrestrictedModel, reflevel, type = "wald", digits = 4){
   # Inputs: unrestrictedmodel is a mlogit object
   #         reflevel is the reference level of the dependent variable
   #         type default is the wald test, It can be changed to "lr" i.e. likelihood ratio
