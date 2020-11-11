@@ -1,29 +1,28 @@
 # This script contains miscellaneous functions for interpreting 
 # some of the more obscure categorical regression models
 
+# Lecture 3 (Ordinal Logit Models) -----
 
-## Lecture 3 (Ordinal Logit Models)
-
-polrLogitStdCoef = function(mod, help = FALSE, digits = 4){
+polrLogitStdCoef <- function(mod, help = FALSE, digits = 4){
   # Like Stata's listcoef for ordinal logit in R
   # mod is a polr object
   # Replicates all beta's in listcoef except bStdY, and bStdXY
   # See the math here: https://www3.nd.edu/~rwilliam/stats3/L04.pdf
   
-  ## z score
+  # z score
   zScore <- summary(mod)$coefficients[1:(ncol(mod$model)-1), 3]
   
-  ## p_value (two tailed)
-  mod.coef <-data.frame(coef(summary(mod)))[1:(ncol(mod$model))-1,]
+  # p_value (two tailed)
+  mod.coef <- data.frame(coef(summary(mod)))[1:(ncol(mod$model))-1,]
   pVal <- round((pnorm(abs(mod.coef$t.value), lower.tail= FALSE) * 2),2)
   
-  ## bStdX 
+  # bStdX 
   bStdX <- mod$coef * apply(mod$model[, 2:(ncol(mod$model))], 2, sd)
   
-  ## bStdY
-  ## bStdY <- mod$coef/sd(as.numeric(mod$model[,1])) ## need latent dep var
+  # bStdY
+  # bStdY <- mod$coef/sd(as.numeric(mod$model[,1])) # need latent dep var
   
-  ## SDofX
+  # SDofX
   SDofX <- apply(mod$model[, 2:(ncol(mod$model))], 2, sd)
   
   
@@ -32,11 +31,11 @@ polrLogitStdCoef = function(mod, help = FALSE, digits = 4){
   outputDF <- as.data.frame(lapply(outputDF, round, digits), row.names = row.names(outputDF)) # ROUND output
   
   helpText <- "b.LogOdds = raw coefficient in Log Odds
-  b.OddsRatio = raw coefficient in Log Odds
-  z = z-score for test of b=0
-  P>|z| = p-value for z-test
-  bStdX = x-standardized coefficient
-  SDofX = standard deviation of X\n\n\n"
+b.OddsRatio = raw coefficient in Log Odds
+z = z-score for test of b=0
+P>|z| = p-value for z-test
+bStdX = x-standardized coefficient
+SDofX = standard deviation of X\n\n\n"
   
   if(help == "FALSE"){return(outputDF)} 
   else if(help == "TRUE"){cat(helpText) ; return(outputDF)}
@@ -45,9 +44,9 @@ polrLogitStdCoef = function(mod, help = FALSE, digits = 4){
 
 
 
-## Lecture 4 (Multinomial Models)
+# Lecture 4 (Multinomial Models) ------
 
-mlogTestR = function(unrestrictedModel, reflevel, type = "wald", digits = 4){
+mlogTestR <- function(unrestrictedModel, reflevel, type = "wald", digits = 4){
   # Inputs: unrestrictedmodel is a mlogit object
   #         reflevel is the reference level of the dependent variable
   #         type default is the wald test, It can be changed to "lr" i.e. likelihood ratio
