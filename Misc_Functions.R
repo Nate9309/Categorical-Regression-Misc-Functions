@@ -1,5 +1,5 @@
-## This script contains miscellaneous functions for interpreting 
-## some of the more obscure categorical regression models
+# This script contains miscellaneous functions for interpreting 
+# some of the more obscure categorical regression models
 
 
 ## Lecture 3 (Ordinal Logit Models) -----
