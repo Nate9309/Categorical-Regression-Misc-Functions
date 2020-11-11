@@ -32,11 +32,11 @@ polrLogitStdCoef <- function(mod, help = FALSE, digits = 4){
   outputDF <- as.data.frame(lapply(outputDF, round, digits), row.names = row.names(outputDF)) # ROUND output
   
   helpText <- "b.LogOdds = raw coefficient in Log Odds
-b.OddsRatio = raw coefficient in Log Odds
-z = z-score for test of b=0
-P>|z| = p-value for z-test
-bStdX = x-standardized coefficient
-SDofX = standard deviation of X\n\n\n"
+  b.OddsRatio = raw coefficient in Log Odds
+  z = z-score for test of b=0
+  P>|z| = p-value for z-test
+  bStdX = x-standardized coefficient
+  SDofX = standard deviation of X\n\n\n"
   
   if(help == "FALSE"){return(outputDF)} 
   else if(help == "TRUE"){cat(helpText) ; return(outputDF)}
