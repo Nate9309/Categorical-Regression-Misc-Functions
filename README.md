@@ -6,7 +6,7 @@ This script contains miscellaneous functions for interpreting the output of cate
 
 ### Summary of functions
 
-So far these only work for the logit models (not their probit counterparts)
+So far these only work for the logit models (not their probit counterparts). The functions rely on the **MASS** & **mlogit** packages and some of their dependencies.
 
 1. `polrLogitStdCoef()` _# X standardized coefficients for ordinal logit models_
     * `polrLogitStdCoef(polrObject, help = FALSE, digits = 4)`
