@@ -2,7 +2,7 @@
 # some of the more obscure categorical regression models
 
 
-## Lecture 3 (Ordinal Logit Models) -----
+## Lecture 3 (Ordinal Logit Models)
 
 polrLogitStdCoef <- function(mod, help = FALSE, digits = 4){
   # Like Stata's listcoef for ordinal logit in R
@@ -45,7 +45,7 @@ polrLogitStdCoef <- function(mod, help = FALSE, digits = 4){
 
 
 
-## Lecture 4 (Multinomial Models) ------
+## Lecture 4 (Multinomial Models)
 
 mlogTestR <- function(unrestrictedModel, reflevel, type = "wald", digits = 4){
   # Inputs: unrestrictedmodel is a mlogit object
