@@ -12,7 +12,7 @@ So far these only work for the logit models (not their probit counterparts). The
     * `polrLogitStdCoef(polrObject, help = FALSE, digits = 4)`
 2. `mlogTestR()` _# does Wald and Likelihood ratio tests of joint significance for multinomial logit models from the mlogit package_
     * `mlogTestR(mlogitObject, reflevel, type = "wald", digits = 4)`
-3. `hmTestR` _# Conducts the Hausman-MacFadden of the Independence of Irrelevant Alternatives (IIA) Assumption in multinomial logit models from the mlogit package_
+3. `hmTestR` _# Conducts the Hausman-MacFadden test of the Independence of Irrelevant Alternatives (IIA) Assumption in multinomial logit models from the mlogit package_
     * `hmTestR(mlogitObject, reflevel, digits = 3)`
     
 ### Loading the Script
