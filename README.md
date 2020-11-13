@@ -12,3 +12,11 @@ So far these only work for the logit models (not their probit counterparts). The
     * `polrLogitStdCoef(polrObject, help = FALSE, digits = 4)`
 2. `mlogTestR()` _# does Wald and Likelihood ratio tests of joint significance for multinomial logit models from the mlogit package_
     * `mlogTestR(mlogitObject, reflevel, type = "wald", digits = 4)`
+3. `hmTestR` _# Conducts the Hausman-MacFadden of the Independence of Irrelevant Alternatives (IIA) Assumption in multinomial logit models from the mlogit package_
+    * `hmTestR(mlogitObject, reflevel, digits = 3)`
+    
+### Loading the Script
+
+**To load the functions into your current R session:**
+   * Install the devtools package: `install.packages(devtools)`
+   * Load the script: `devtools::source_url("https://raw.githubusercontent.com/Nate9309/Categorical-Regression-Misc-Functions/main/Misc_Functions.R")`
